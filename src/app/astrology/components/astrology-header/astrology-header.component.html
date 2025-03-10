@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Astrology</a>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div [ngbCollapse]="isCollapsed" id="navbarNav" class="navbar-collapse d-lg-block">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/home">Home</a></li>
+        
+        <!-- Dropdown menu for Predictions -->
+        <li class="nav-item" ngbDropdown>
+          <a class="nav-link" ngbDropdownToggle aria-expanded="false">
+            Predictions
+          </a>
+          <ul class="dropdown-menu bg-dark" ngbDropdownMenu>
+            <li><a class="dropdown-item" routerLink="/astrology/predictions/monthly-prediction">Monthly Prediction</a></li>
+            <li><a class="dropdown-item" routerLink="/astrology/predictions/yearly-prediction">Yearly Prediction</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/courses">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/articles">Articles</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/blogs">Blogs</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/talk-to-astrologer">Talk to Astrologer</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/astrology/contact-us">Contact Us</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/login">Login</a></li>
+        <li class="nav-item">
+          <a class="btn btn-warning" routerLink="/yoga">Yoga</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
