@@ -1,0 +1,49 @@
+<div class="row mb-4">
+    <div class="col-md-4">
+      <div class="card text-white bg-primary mb-3">
+        <div class="card-body">
+          <h5 class="card-title">User Count</h5>
+          <p class="card-text">{{ userCount }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-success mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Favourite Users</h5>
+          <p class="card-text">{{ favouriteCount }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card text-white bg-warning mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Recently Viewed</h5>
+          <p class="card-text">{{ recentCount }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of [
+        { id: 1, name: 'Alice', email: 'alice@example.com' },
+        { id: 2, name: 'Bob', email: 'bob@example.com' }
+      ]">
+        <td><a [routerLink]="['/admin/user', user.id]">{{ user.name }}</a></td>
+        <td>{{ user.email }}</td>
+        <td>
+          <button class="btn btn-sm btn-primary">Edit</button>
+          <button class="btn btn-sm btn-danger">Delete</button>
+          <button class="btn btn-sm btn-warning">Favourite</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
