@@ -24,21 +24,33 @@ export class LoginComponent {
   }
 
   onSubmit(): void {
-    console.log("this.loginForm.valid",this.loginForm.valid)
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
+  
       const hardcodedAdmin = {
         email: 'admin@example.com',
         password: 'admin123',
         role: 'admin' as const
       };
-
+  
+      const hardcodedRegularUser = {
+        email: 'regularUser@example.com',
+        password: 'regular123',
+        role: 'user' as const
+      };
+      
       if (email === hardcodedAdmin.email && password === hardcodedAdmin.password) {
         this.authService.login(hardcodedAdmin);
         this.router.navigate(['/admin/dashboard']);
+      } else if (email === hardcodedRegularUser.email && password === hardcodedRegularUser.password) {
+        this.authService.login(hardcodedRegularUser);
+        console.log("Navigating to astrology...");
+        this.router.navigate(['/astrology']);
       } else {
         this.errorMessage = 'Invalid email or password';
       }
-    }
+      
   }
+}
+  
 }
