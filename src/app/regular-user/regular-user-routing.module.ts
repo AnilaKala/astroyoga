@@ -22,6 +22,7 @@ const routes: Routes = [
       path: 'astrology',
       component: AstrologyLayoutComponent,
       children: [
+        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         { path: 'dashboard', component: AstrologyHomeComponent },
         // {
         //   path: 'horoscope',

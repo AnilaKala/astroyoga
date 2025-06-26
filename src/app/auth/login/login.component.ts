@@ -45,7 +45,7 @@ export class LoginComponent {
       } else if (email === hardcodedRegularUser.email && password === hardcodedRegularUser.password) {
         this.authService.login(hardcodedRegularUser);
         console.log("Navigating to astrology...");
-        this.router.navigate(['/astrology']);
+        this.router.navigate(['/astrology/dashboard']);
       } else {
         this.errorMessage = 'Invalid email or password';
       }
