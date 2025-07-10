@@ -1,1 +1,38 @@
-<p>horoscope works!</p>
+<div class="container py-4">
+    <!-- First Card: Zodiac Selector and Description -->
+    <div class="card mb-4 p-3">
+      <div class="row g-3">
+        <!-- Left: Selected Zodiac Description -->
+        <div class="col-md-6">
+          <img [src]="selectedSign.image" alt="Selected Zodiac" class="img-fluid rounded mb-2" style="max-height: 150px; object-fit: contain;">
+          <h4>{{ selectedSign.name }} Horoscope</h4>
+          <p>{{ selectedSign.description }}</p>
+        </div>
+  
+        <!-- Right: Zodiac Icons -->
+        <div class="col-md-6">
+          <div class="row row-cols-4 g-2">
+            <div class="col" *ngFor="let sign of zodiacSigns">
+              <button class="btn w-100 border text-center py-3 zodiac-btn" (click)="selectSign(sign)">
+                <img [src]="sign.icon" alt="{{ sign.name }}" width="30">
+                <div class="mt-1 zodiac-name">{{ sign.name }}</div>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Section Titles (Tabs) -->
+    <div class="d-flex justify-content-between mb-2 flex-wrap gap-2">
+      <button class="btn btn-light" *ngFor="let type of horoscopeTypes" [class.active]="selectedType === type" (click)="selectType(type)">
+        {{ type }}
+      </button>
+    </div>
+  
+    <!-- Second Card: Horoscope Description -->
+    <div class="card p-3">
+      <h5>{{ selectedSign.name }} {{ selectedType }} Horoscope</h5>
+      <p>{{ getHoroscopeDescription() }}</p>
+    </div>
+  </div>

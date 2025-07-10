@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AstrologyLayoutComponent } from './components/astrology-layout/astrology-layout.component';
 import { YogaLayoutComponent } from './components/yoga-layout/yoga-layout.component';
 import { AstrologyHomeComponent } from './pages/astrology/astrology-home/astrology-home.component';
-import { BlogsComponent } from './pages/astrology/blogs/blogs.component';
+import { BlogsComponent } from './pages/astrology/astrology-blogs/blogs/blogs.component';
 import { AstrologyCoursesComponent } from './pages/astrology/courses/courses.component';
 
 import { DailyHoroscopeComponent } from './pages/astrology/horoscope/daily/daily.component';
@@ -16,6 +16,9 @@ import { YogaCoursesComponent } from './pages/yoga/courses/courses.component';
 import { DailyYogaComponent } from './pages/yoga/daily-yoga/daily-yoga.component';
 import { YogaServicesComponent } from './pages/yoga/services/services.component';
 import { YogaHomeComponent } from './pages/yoga/yoga-home/yoga-home.component';
+import { BlogDetailComponent } from './pages/astrology/astrology-blogs/blog-detail/blog-detail.component';
+import { ContactUsComponent } from './pages/shared/contact-us/contact-us.component';
+import { AboutUsComponent } from './pages/shared/about-us/about-us.component';
 
 const routes: Routes = [
     {
@@ -24,17 +27,14 @@ const routes: Routes = [
       children: [
         { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
         { path: 'dashboard', component: AstrologyHomeComponent },
-        // {
-        //   path: 'horoscope',
-        //   component: HoroscopeComponent,
-        //   children: [
-        //     { path: 'daily', component: DailyHoroscopeComponent },
-        //     { path: 'monthly', component: MonthlyHoroscopeComponent },
-        //     { path: 'yearly', component: YearlyHoroscopeComponent },
-        //   ],
-        // },
-        // { path: 'blogs', component: BlogsComponent },
-        // { path: 'services', component: AstrologyServicesComponent },
+        {path:'horoscope',component:HoroscopeComponent},
+       
+        { path: 'blogs', component: BlogsComponent },
+        { path: 'blogs/:id', component: BlogDetailComponent },
+        { path: 'services', component: AstrologyServicesComponent },
+        {path:'contact-us',component:ContactUsComponent},
+        {path:'about-us',component:AboutUsComponent}
+        
         // { path: 'courses', component: AstrologyCoursesComponent },
        
       ],

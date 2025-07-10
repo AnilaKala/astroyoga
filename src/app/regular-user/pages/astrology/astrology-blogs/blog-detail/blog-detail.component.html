@@ -1,0 +1,67 @@
+<div class="container py-5">
+    <div class="mb-4">
+      <button class="btn btn-outline-light" (click)="backToBlogList()">← Back to Blogs</button>
+    </div>
+  
+    <div class="row">
+      <!-- Left: Blog Detail -->
+      <div class="col-lg-8 mb-4">
+        <div class="card shadow">
+          <img [src]="blog.image" class="card-img-top" alt="Blog Image">
+          <div class="card-body">
+            <h2 class="card-title">{{ blog.title }}</h2>
+            <div class="text-muted small mb-3">
+              <img src="assets/icons/user-icon.png" width="20" class="me-1" />
+              {{ blog.author }} | {{ blog.date }}
+            </div>
+            <p class="card-text">{{ blog.content }}</p>
+  
+           
+          </div>
+        </div>
+      </div>
+  
+      <!-- Right: Related Blogs (card style) -->
+   <!-- Right: Related Blogs and Meta -->
+<div class="col-lg-4 bg-white p-3 shadow-sm rounded ">
+    <!-- Popular Posts -->
+    <div class="mb-4">
+      <h5>Popular Posts</h5>
+      <hr />
+      <div class="d-flex mb-3" *ngFor="let post of relatedBlogs.slice(0, 3)">
+        <img [src]="post.image" class="me-2" style="width: 60px; height: 60px; object-fit: cover;" alt="Popular" />
+        <div>
+          <a [routerLink]="['/astrology/blogs', post.id]" class="fw-medium d-block text-dark text-decoration-none">
+            {{ post.title | slice:0:55 }}{{ post.title.length > 55 ? '...' : '' }}
+          </a>
+          <small class="text-dark">{{ post.date }}</small>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Categories List -->
+    <div class="mb-4">
+      <h5>Categories</h5>
+      <hr />
+      <ul class="list-unstyled">
+        <li *ngFor="let cat of categories">
+          <a class="text-dark text-decoration-none d-flex justify-content-between">
+            {{ cat.name }}
+            <span class="text-dark">({{ cat.count }})</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  
+    <!-- Tags -->
+    <div class="mb-4">
+      <h5>Tags</h5>
+      <hr />
+      <div class="d-flex flex-wrap gap-2">
+        <span class="badge bg-light text-dark border" *ngFor="let tag of tags">{{ tag }}</span>
+      </div>
+    </div>
+  </div>
+  
+    </div>
+  </div>

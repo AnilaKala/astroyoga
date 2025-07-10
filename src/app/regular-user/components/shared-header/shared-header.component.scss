@@ -4,4 +4,19 @@ nav {
       color: #007bff;
     }
   }
+  .navbar-nav .nav-link {
+    position: relative;
+    padding-bottom: 6px;
+  }
+  
+  .navbar-nav .active-link .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
   

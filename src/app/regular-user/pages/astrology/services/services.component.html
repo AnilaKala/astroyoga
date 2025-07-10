@@ -1,1 +1,71 @@
-<p>services works!</p>
+<div class="services-section py-5 text-center">
+  <div class="container">
+    <div class="card mb-4 p-3">
+    <h2 class="section-title">Our Services</h2>
+    <p class="section-subtitle mb-5">
+      Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+    </p>
+
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let service of services">
+        <div class="card service-card">
+          <div class="image-wrapper">
+            <img [src]="service.image" class="card-img-top service-img" alt="Service Image">
+          </div>
+          <!-- <div class="card-img-overlay d-flex justify-content-center align-items-center"> -->
+            <div class="overlay-content text-center bg-white bg-opacity-75 p-3 rounded">
+              <div class="icon-container mb-2">
+                <i class="bi" [ngClass]="service.icon"></i>
+              </div>
+              <h5 class="card-title text-dark">{{ service.title }}</h5>
+              <p class="card-text text-dark">{{ service.description }}</p>
+            </div>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="testimonial-section text-white text-center py-5" style="background: url('assets/images/testimonial-bg.jpg') center/cover no-repeat;">
+  <div class="container">
+    <h2 class="section-title text-white">Testimonials</h2>
+    <p class="section-subtitle text-light">
+      Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+    </p>
+
+    <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="testimonial-item">
+            <img src="assets/images/user1.jpg" class="rounded-circle mb-3" width="80" height="80" alt="user" />
+            <h5>Saul Goodman</h5>
+            <p class="small text-muted">CEO & Founder</p>
+            <p class="lead">“Fugit voluptas iusto maiores tempora autem reprehenderit alias delectus...!”</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="testimonial-item">
+            <img src="assets/images/user2.jpg" class="rounded-circle mb-3" width="80" height="80" alt="user" />
+            <h5>Sara Wilsson</h5>
+            <p class="small text-muted">Designer</p>
+            <p class="lead">“Lorem ipsum dolor sit amet, consectetur adipiscing elit.”</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+

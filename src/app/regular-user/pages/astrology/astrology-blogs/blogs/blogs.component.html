@@ -1,0 +1,74 @@
+<div class="container py-4">
+    <h2 class="text-white">Blogs</h2>
+    <!-- Search Bar -->
+    <div class="mb-4">
+      <input type="text" class="form-control" placeholder="Search blogs..." [(ngModel)]="searchText" />
+    </div>
+  
+    <!-- Back button (if in viewAllMode) -->
+    <div class="mb-3" *ngIf="viewAllMode">
+      <button class="btn btn-outline-light" (click)="backToAll()">← Back to All Categories</button>
+    </div>
+  
+    <!-- Full List Mode -->
+    <ng-container *ngIf="!viewAllMode">
+      <div *ngFor="let cat of categories">
+        <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+            <h4 class="mb-0 text-white">{{ cat }} Blogs</h4>
+            <button
+              *ngIf="shouldShowViewAll(cat)"
+              class="btn btn-sm btn-outline-light"
+              (click)="onViewAll(cat)"
+            >
+              View All
+            </button>
+          </div>
+          
+  
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let blog of getLimitedBlogs(cat)">
+            <div class="card h-100">
+              <img [src]="blog.image" class="card-img-top" alt="blog image" />
+              <div class="card-body">
+                <a [routerLink]="['/astrology/blogs', blog.id]" class="stretched-link"><h5 class="card-title">{{ blog.title }}</h5></a>
+                <p class="card-text">{{ blog.description }}</p>
+              </div>
+              <div class="card-footer d-flex justify-content-between small text-muted">
+                <span>
+                  <img src="assets/images/user1.jpg" width="20" class="me-1" />
+                  {{ blog.author }}
+                </span>
+                <span>{{ blog.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </ng-container>
+  
+    <!-- View All Mode - Only Selected Category -->
+    <ng-container *ngIf="viewAllMode && selectedViewCategory">
+      <h4 class="mt-4 mb-3">{{ selectedViewCategory }} Blogs</h4>
+  
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col" *ngFor="let blog of getBlogsByCategory(selectedViewCategory)">
+          <div class="card h-100">
+            <img [src]="blog.image" class="card-img-top" alt="blog image" />
+            <div class="card-body">
+              <h5 class="card-title">{{ blog.title }}</h5>
+              <p class="card-text">{{ blog.description }}</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between small text-muted">
+              <span>
+                <img src="assets/icons/user-icon.png" width="20" class="me-1" />
+                {{ blog.author }}
+              </span>
+              <span>{{ blog.date }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  

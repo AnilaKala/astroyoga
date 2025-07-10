@@ -16,27 +16,27 @@ export class SharedHeaderComponent implements OnInit {
     this.router.navigate([newPath]);
   }
 
-  menuItems: { label: string; path: string }[] = [];
+  menuItems: { label: string; path: string,exact:boolean }[] = [];
 
   ngOnInit(): void {
     if (this.currentPage === 'astrology') {
       this.menuItems = [
-        { label: 'Home', path: '/astrology' },
-        { label: 'Horoscope', path: '/astrology/horoscope/daily' },
-        { label: 'Blogs', path: '/astrology/blogs' },
-        { label: 'Services', path: '/astrology/services' },
-        { label: 'Courses', path: '/astrology/courses' },
-        { label: 'Contact Us', path: '/astrology/contact-us' },
-        { label: 'About Us', path: '/astrology/about-us' },
+        { label: 'Home', path: '/astrology/dashboard', exact: true },
+        { label: 'Horoscope', path: '/astrology/horoscope', exact: true },
+        { label: 'Blogs', path: '/astrology/blogs' , exact: false},
+        { label: 'Services', path: '/astrology/services', exact: true },
+        // { label: 'Courses', path: '/astrology/courses', exact: true },
+        { label: 'Contact Us', path: '/astrology/contact-us' , exact: true},
+        { label: 'About Us', path: '/astrology/about-us', exact: true },
       ];
     } else {
       this.menuItems = [
-        { label: 'Home', path: '/yoga' },
-        { label: 'Daily Yoga', path: '/yoga/daily-yoga' },
-        { label: 'Courses', path: '/yoga/courses' },
-        { label: 'Services', path: '/yoga/services' },
-        { label: 'Contact Us', path: '/yoga/contact-us' },
-        { label: 'About Us', path: '/yoga/about-us' },
+        { label: 'Home', path: '/yoga', exact: true },
+        { label: 'Daily Yoga', path: '/yoga/daily-yoga', exact: true },
+        { label: 'Courses', path: '/yoga/courses', exact: true },
+        { label: 'Services', path: '/yoga/services', exact: true },
+        { label: 'Contact Us', path: '/yoga/contact-us', exact: true },
+        { label: 'About Us', path: '/yoga/about-us' , exact: true},
       ];
     }
   }

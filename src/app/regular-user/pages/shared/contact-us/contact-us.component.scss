@@ -1,0 +1,24 @@
+.contact-section {
+    .icon-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      font-size: 1.5rem;
+    }
+  
+    input, textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border:1px solid #008fbd !important
+    }
+  
+    .btn-primary {
+      background-color: #00aee0;
+      border: none;
+    }
+  
+    .btn-primary:hover {
+      background-color: #008fbd;
+    }
+  }
+  
