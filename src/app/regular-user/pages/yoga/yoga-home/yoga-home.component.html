@@ -1,1 +1,195 @@
-<p>yoga-home works!</p>
+<section class="hero bg-light py-5 text-center text-white">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3">Yoga Practice For Good Health</h1>
+      <p class="lead">Lorem ipsum dolor sit amet elit. Phasell nec pretium mi. Curabitur ornare velit non.</p>
+      <div>
+        <button class="btn btn-dark me-2">Join Now</button>
+        <button class="btn btn-outline-dark">Contact Us</button>
+      </div>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section class="about bg-white py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <img src="assets/images/1.PNG" class="img-fluid rounded" alt="About Yoga">
+        </div>
+        <div class="col-md-6">
+          <h2>Welcome to Yooga</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Phasellus nec pretium mi.</p>
+          <p>Aliquam metus tortor, auctor id gravida condimentum, viverra quis sem.</p>
+          <button class="btn btn-primary mt-3">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Experience Section -->
+  <section class="experience-section py-5 text-center bg-light">
+    <div class="container">
+      <h2 class="section-title">Experience of Yoga</h2>
+      <p class="section-subtitle mb-5">
+        Yoga Fit is where you can find balance, harmony and energy renewal amidst the hectic bustle of everyday pressures and deadlines.
+        Relax & enjoy a personalized day yoga experience in our comfortable sanctuary.
+      </p>
+  
+      <div class="row align-items-center">
+        <!-- Left features -->
+        <div class="col-md-4 text-md-end mb-4 mb-md-0">
+          <div class="feature mb-4">
+            <i class="bi bi-heart text-primary fs-3"></i>
+            <h5 class="mt-2">Balance Body & Mind</h5>
+            <p class="text-muted">Curabitur facilisis ornare velit non vulputate.</p>
+          </div>
+          <div class="feature mb-4">
+            <i class="bi bi-droplet-half text-danger fs-3"></i>
+            <h5 class="mt-2">Healthy Daily Life</h5>
+            <p class="text-muted">Curabitur facilisis ornare velit non vulputate.</p>
+          </div>
+          <div class="feature mb-4">
+            <i class="bi bi-fire text-warning fs-3"></i>
+            <h5 class="mt-2">Healthy Daily Life</h5>
+            <p class="text-muted">Curabitur facilisis ornare velit non vulputate.</p>
+          </div>
+        </div>
+  
+        <!-- Center image -->
+        <div class="col-md-4 mb-4 mb-md-0">
+          <img
+            src="assets/images/1.PNG"
+            alt="Yoga Experience"
+            class="img-fluid rounded-circle border border-3 border-primary"
+          />
+        </div>
+  
+        <!-- Right features -->
+        <div class="col-md-4 text-md-start">
+          <div class="feature mb-4">
+            <i class="bi bi-eye text-warning fs-3"></i>
+            <h5 class="mt-2">Meditation Practice</h5>
+            <p class="text-muted">Curabitur facilisis ornare velit non vulputate.</p>
+          </div>
+          <div class="feature mb-4">
+            <i class="bi bi-calendar-event text-info fs-3"></i>
+            <h5 class="mt-2">Yoga Month Challenge</h5>
+            <p class="text-muted">Curabitur facilisis ornare velit non vulputate.</p>
+          </div>
+          <div class="feature mb-4">
+            <i class="bi bi-calendar-event text-info fs-3"></i>
+            <h5 class="mt-2">Yoga Month Challenge</h5>
+            <p class="text-muted">Curabitur facilisis ornare velit non vulputate.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <!-- Classes Section -->
+  <section class="yoga-parallax-section d-flex align-items-center">
+    <div class="container text-center text-white">
+      <h2 class="display-5 fw-bold">Are You Looking For Yoga Training? Join With Us Now</h2>
+      <p class="my-4">
+        There are many variations of passages of Lorem Ipsum available, but the majority have
+        suffered alteration in some form, by injected humour, or randomised words.
+      </p>
+      <button class="btn btn-light btn-lg">Get Started</button>
+    </div>
+  </section>
+  
+  
+  <!-- Blog Section -->
+  <section class="blog py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Latest Yoga Articles</h2>
+      <div class="row g-4">
+        <div class="col-md-4" *ngFor="let blog of blogs">
+          <div class="card h-100">
+            <img [src]="blog.image" class="card-img-top" alt="Blog image">
+            <div class="card-body">
+              <h5 class="card-title">{{ blog.title }}</h5>
+              <p class="card-text">{{ blog.description }}</p>
+              <a href="#" class="btn btn-link">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Team Section -->
+  <section class="about-section text-center py-5 bg-light">
+    <div class="container">
+      <small class="text-uppercase text-muted">About Us</small>
+      <h2 class="mb-4 fw-bold">Our Legal Attorneys</h2>
+      <p class="text-muted mb-5">
+        Far far away, behind the word mountains, far from the countries Vokalia and Consonantia
+      </p>
+  
+      <div class="row justify-content-center">
+        <div class="col-6 col-sm-6 col-md-3 mb-4" *ngFor="let member of team">
+          <div class="card border-0 bg-transparent">
+            <img [src]="member.image" class="rounded-circle mb-3 shadow mx-auto d-block" alt="{{ member.name }}">
+
+            <div class="card-body px-0">
+              <h5 class="card-title mb-1 fw-semibold">{{ member.name }}</h5>
+              <p class="text-muted small">{{ member.role }}</p>
+              <div class="social-icons">
+                <a href="#" class="text-dark me-2"><i class="bi bi-twitter"></i></a>
+                <a href="#" class="text-dark me-2"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-dark me-2"><i class="bi bi-google"></i></a>
+                <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <!-- Testimonials Section -->
+  <section class="testimonials bg-primary text-white py-5 text-center">
+    <div class="container">
+      <h2 class="mb-4">Testimonials</h2>
+      <blockquote class="blockquote">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit."</p>
+        <footer class="blockquote-footer text-white">Sara Wilsson, Designer</footer>
+      </blockquote>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="contact py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">Contact</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h5>Contact Info</h5>
+          <p><strong>Location:</strong> A108 Adam Street, NY 535022</p>
+          <p><strong>Phone:</strong> +1 5589 55488 55</p>
+          <p><strong>Email:</strong> infoexample.com</p>
+        </div>
+        <div class="col-md-6">
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Subject">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>

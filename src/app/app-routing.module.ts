@@ -17,15 +17,15 @@ const routes: Routes = [
   },
   {
     path: '',
-    canActivate: [UserGuard],
+    // canActivate: [UserGuard],
     loadChildren: () => import('./regular-user/regular-user.module').then(m => m.RegularUserModule)
   },
   
-  {
-    path: '',
-    redirectTo: 'auth/login',
-    pathMatch: 'full'
-  },
+  // {
+  //   path: '',
+  //   redirectTo: 'auth/login',
+  //   pathMatch: 'full'
+  // },
   {
     path: '**',
     redirectTo: 'auth/login'

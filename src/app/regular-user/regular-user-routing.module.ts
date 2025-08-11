@@ -21,36 +21,37 @@ import { ContactUsComponent } from './pages/shared/contact-us/contact-us.compone
 import { AboutUsComponent } from './pages/shared/about-us/about-us.component';
 
 const routes: Routes = [
-    {
-      path: 'astrology',
-      component: AstrologyLayoutComponent,
-      children: [
-        { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-        { path: 'dashboard', component: AstrologyHomeComponent },
-        {path:'horoscope',component:HoroscopeComponent},
-       
-        { path: 'blogs', component: BlogsComponent },
-        { path: 'blogs/:id', component: BlogDetailComponent },
-        { path: 'services', component: AstrologyServicesComponent },
-        {path:'contact-us',component:ContactUsComponent},
-        {path:'about-us',component:AboutUsComponent}
-        
-        // { path: 'courses', component: AstrologyCoursesComponent },
-       
-      ],
-    },
-    {
-      path: 'yoga',
-      component: YogaLayoutComponent,
-      children: [
-        { path: 'dashboard', component: YogaHomeComponent },
-        // { path: 'daily-yoga', component: DailyYogaComponent },
-        // { path: 'courses', component: YogaCoursesComponent },
-        // { path: 'services', component: YogaServicesComponent },
-      
-      ],
-    },
-  ];
+  // This handles the base route within RegularUserModule
+  {
+    path: '',
+    redirectTo: 'astrology/dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'astrology',
+    component: AstrologyLayoutComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: AstrologyHomeComponent },
+      { path: 'horoscope', component: HoroscopeComponent },
+      { path: 'blogs', component: BlogsComponent },
+      { path: 'blogs/:id', component: BlogDetailComponent },
+      { path: 'services', component: AstrologyServicesComponent },
+      { path: 'contact-us', component: ContactUsComponent },
+      { path: 'about-us', component: AboutUsComponent }
+    ]
+  },
+  {
+    path: 'yoga',
+    component: YogaLayoutComponent,
+    children: [
+      { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
+      { path: 'dashboard', component: YogaHomeComponent },
+      // Add more yoga routes if needed
+    ]
+  }
+];
+
   @NgModule({
     imports: [RouterModule.forChild(routes)],
     exports: [RouterModule]

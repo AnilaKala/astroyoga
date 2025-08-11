@@ -1,0 +1,105 @@
+.hero{
+    background-image: url('/assets/images/yoga-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4); /* Change 0.4 to 0.6 or 0.7 for more darkness */
+    z-index: 0;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 2;
+  }
+.experience-section {
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #c44d96;
+    }
+  
+    .section-subtitle {
+      font-size: 1.1rem;
+      max-width: 900px;
+      margin: 0 auto;
+      color: #555;
+    }
+  
+    .feature i {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  
+    .feature h5 {
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+  
+    .feature p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  
+    img {
+      max-width: 220px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+
+  .about-section {
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+  
+    .card-body {
+      padding: 0;
+    }
+  
+    .social-icons i {
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+  
+    .social-icons i:hover {
+      color: #c44d96;
+    }
+  
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border: 3px solid #fff;
+    }
+  }
+
+  .yoga-parallax-section {
+    background-image: url('/assets/images/bg.jpg'); /* Update with your actual image path */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+    min-height: 500px;
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+  }
+  
+  .yoga-parallax-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay with opacity */
+    z-index: 0;
+  }
+  
+  .yoga-parallax-section .container {
+    position: relative;
+    z-index: 2;
+  }
+  
+  

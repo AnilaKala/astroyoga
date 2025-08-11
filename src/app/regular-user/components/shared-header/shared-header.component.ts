@@ -31,7 +31,7 @@ export class SharedHeaderComponent implements OnInit {
       ];
     } else {
       this.menuItems = [
-        { label: 'Home', path: '/yoga', exact: true },
+        { label: 'Home', path: '/yoga/dashboard', exact: true },
         { label: 'Daily Yoga', path: '/yoga/daily-yoga', exact: true },
         { label: 'Courses', path: '/yoga/courses', exact: true },
         { label: 'Services', path: '/yoga/services', exact: true },
